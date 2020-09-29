@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/paypal/setup-transaction', [App\Http\Controllers\PaypalTransactionController::class, 'setUpTransaction'])->name('paypal.setup');
+Route::get('/paypal/capture-transaction', [App\Http\Controllers\PaypalTransactionController::class, 'captureTransaction'])->name('paypal.capture');
